@@ -64,18 +64,18 @@ function filterConns(conns: FormattedConn[], keyword: string) {
   return !keyword
     ? conns
     : conns.filter((conn) =>
-      [
-        conn.host,
-        conn.sourceIP,
-        conn.sourcePort,
-        conn.destinationIP,
-        conn.chains,
-        conn.rule,
-        conn.type,
-        conn.network,
-        conn.processPath,
-      ].some((field) => hasSubstring(field, keyword))
-    );
+        [
+          conn.host,
+          conn.sourceIP,
+          conn.sourcePort,
+          conn.destinationIP,
+          conn.chains,
+          conn.rule,
+          conn.type,
+          conn.network,
+          conn.processPath,
+        ].some((field) => hasSubstring(field, keyword))
+      );
 }
 
 function formatConnectionDataItem(
