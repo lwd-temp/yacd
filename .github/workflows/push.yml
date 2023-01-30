@@ -33,6 +33,12 @@ jobs:
 
       - name: Lint
         run: pnpm lint
+      - name: Set git commit sha
+        id: revparse
+        run: |
+          echo "COMMIT_HASH=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+      - name: test
+        run: echo COMMIT_HASH=$COMMIT_HASH
       - name: Build
         run: pnpm build
 
